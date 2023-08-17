@@ -58,9 +58,9 @@ sudo systemctl restart nginx
   
   sudo git init
   
-  sudo git clone https://github.com/mannansiddiqui/Host-multiple-websites-on-an-EC2-instance-running-an-Nginx-server-and-configure-SSL-for-each-website.git
+  sudo git clone https://github.com/deshmukh9970/AWS-Sunglass-Web.git
   
-  sudo mv /var/www/html/Host-multiple-websites-on-an-EC2-instance-running-an-Nginx-server-and-configure-SSL-for-each-website/sungla/ /var/www/html (mv source tragetpast) 
+  sudo mv /var/www/html/AWS-Sunglass-Web/sungla/ /var/www/html (mv source tragetpast) 
   
 
 open webbroweser example  ip 43.13.131.23:portnumber
