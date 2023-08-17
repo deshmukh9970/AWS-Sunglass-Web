@@ -9,7 +9,48 @@
 - Configure the domain and apply SSL.
 - Set up an automation script for SSL certificate renewal.
 - Migrate Freenom DNS to Route53.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+## My personal Nots added
+  Q.1 How to run multiple website in 1 ec2 server using github repo
 
+sudo apt update
+sudo apt install nginx
+sudo nginx -v
+sudo mkdir -p /var/www/html  (give permission to path)
+sudo mkdir -p /var/www/test1354.m1/html (give permission to path)
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/mannan18.m1 (give anything name to copy folder)
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/test1354.m1 (give anything name to copy folder)
+sudo vi /etc/nginx/sites-available/mannan18.m1 
+[
+    vi editor open
+    you can give 
+    listen 8080;
+    listan [::]8080; 
+    root /var/www/html/fldername 
+]
+
+sudo vi /etc/nginx/sites-available/test1354.m1 
+[
+    vi editor open
+    you can give 
+    listen 8081;
+    listan [::]8081; 
+    root /var/www/test1354.m1/html
+]
+
+ 
+sudo ln -s  /etc/nginx/sites-available/mannan18.m1 /etc/nginx/sites-enabled/
+sudo ln -s  /etc/nginx/sites-available/test1354.m1 /etc/nginx/sites-enabled/
+sudo nginx -t (o check that there are no syntax errors in any of your Nginx files, use )
+sudo systemctl restart nginx
+
+  cd /var/www/html
+  sudo git init
+  sudo git clone https://github.com/mannansiddiqui/Host-multiple-websites-on-an-EC2-instance-running-an-Nginx-server-and-configure-SSL-for-each-website.git
+  sudo mv /var/www/html/Host-multiple-websites-on-an-EC2-instance-running-an-Nginx-server-and-configure-SSL-for-each-website/sungla/ /var/www/html (mv source tragetpast)  
+
+open webbroweser example  ip 43.13.131.23:portnumber
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #### Step-1: Create an EC2 instance.
 
 Firstly, log in to the AWS management console.
