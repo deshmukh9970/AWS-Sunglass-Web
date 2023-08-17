@@ -14,12 +14,19 @@
   Q.1 How to run multiple website in 1 ec2 server using github repo
 
 sudo apt update
+
 sudo apt install nginx
+
 sudo nginx -v
+
 sudo mkdir -p /var/www/html  (give permission to path)
+
 sudo mkdir -p /var/www/test1354.m1/html (give permission to path)
+
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/mannan18.m1 (give anything name to copy folder)
+
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/test1354.m1 (give anything name to copy folder)
+
 sudo vi /etc/nginx/sites-available/mannan18.m1 
 [
     vi editor open
@@ -40,14 +47,21 @@ sudo vi /etc/nginx/sites-available/test1354.m1
 
  
 sudo ln -s  /etc/nginx/sites-available/mannan18.m1 /etc/nginx/sites-enabled/
+
 sudo ln -s  /etc/nginx/sites-available/test1354.m1 /etc/nginx/sites-enabled/
+
 sudo nginx -t (o check that there are no syntax errors in any of your Nginx files, use )
+
 sudo systemctl restart nginx
 
   cd /var/www/html
+  
   sudo git init
+  
   sudo git clone https://github.com/mannansiddiqui/Host-multiple-websites-on-an-EC2-instance-running-an-Nginx-server-and-configure-SSL-for-each-website.git
-  sudo mv /var/www/html/Host-multiple-websites-on-an-EC2-instance-running-an-Nginx-server-and-configure-SSL-for-each-website/sungla/ /var/www/html (mv source tragetpast)  
+  
+  sudo mv /var/www/html/Host-multiple-websites-on-an-EC2-instance-running-an-Nginx-server-and-configure-SSL-for-each-website/sungla/ /var/www/html (mv source tragetpast) 
+  
 
 open webbroweser example  ip 43.13.131.23:portnumber
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
